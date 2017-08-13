@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'whoami'
             }
+        }
         stage('build') {
             agent { docker 'python:3.5.1' }
             steps {
