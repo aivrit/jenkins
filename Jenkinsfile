@@ -2,13 +2,13 @@ pipeline {
     agent {
         node {
             label ''
-            customWorkspace '/var/cmp/infrastructure'
         }
     }
     stages {
         stage('test') {
             steps {
-                sh 'pwd'
+                sh 'cd /var/cmp/infrastructure && env.sh build int'
+                sh 'cd /var/cmp/infrastructure && env.sh start int'
             }
         }
     }
